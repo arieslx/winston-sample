@@ -1,5 +1,5 @@
 const express = require('express');
-const winston = require('winston');
+const logger = require('./utils/logger.js');
 
 const app = express();
 const port = 3000;
@@ -33,8 +33,5 @@ app.use((req, res, done) => {
 });
 
 app.listen(port, () => console.log(`listening port ${port}!`));
-const logger = winston.createLogger({
-  transports: [new winston.transports.Console()],
-});
 
 console.log(`Hello Node.js v${process.versions.node}!`);
